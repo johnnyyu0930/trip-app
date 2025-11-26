@@ -8,22 +8,57 @@ import { ChiikawaFace, HachiwareFace, UsagiFace } from './components/ChiikawaSti
 const App: React.FC = () => {
   const [activeDay, setActiveDay] = useState(0);
 
+  const isManualScrolling = React.useRef(false);
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
   const scrollToDay = (index: number) => {
+    isManualScrolling.current = true;
     setActiveDay(index);
     const element = document.getElementById(`day-${index}`);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Account for fixed header
+      const yOffset = -100; 
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
+    
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      isManualScrolling.current = false;
+    }, 1000);
   };
 
-  // Optional: Update active day on scroll
+  // Update active day on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      // Simple logic to highlight nav based on scroll position
-      // In a real app, IntersectionObserver is better
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Trigger when element is near top of viewport
+      threshold: 0
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      if (isManualScrolling.current) return;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const index = parseInt(id.split('-')[1]);
+          if (!isNaN(index)) {
+            setActiveDay(index);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    // Observe all day elements
+    ITINERARY_DATA.forEach((_, index) => {
+      const element = document.getElementById(`day-${index}`);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
