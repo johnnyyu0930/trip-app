@@ -29,7 +29,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
         time: '19:11', 
         title: '抵達飯店', 
         description: 'ランドーホテル福岡アネックス (Randor Hotel Fukuoka Annex)。寬敞的公寓式酒店，有小廚房與洗衣機，非常適合親子！Check-in 時記得確認隔天早餐的安排喔。', 
-        link: 'https://www.google.com/maps/search/?api=1&query=Randor+Hotel+Fukuoka+Annex', 
+        link: 'https://maps.app.goo.gl/M9WAuzpAavJb9j9j7?g_st=ipc', 
         type: ActivityType.HOTEL
       },
       { 
@@ -48,12 +48,12 @@ export const ITINERARY_DATA: DayItinerary[] = [
     highlightColor: 'bg-chiikawa-pink',
     weatherForecast: { temp: '5°C - 12°C', condition: '晴朗舒適', type: 'sunny' },
     items: [
-      { time: '09:40', title: '出發取車', type: ActivityType.ACTIVITY },
+      { time: '09:10', title: '出發取車', type: ActivityType.ACTIVITY },
       { 
-        time: '10:00', 
+        time: '09:30', 
         title: '取車', 
-        description: 'オリックスレンタカー (ORIX Rent-A-Car) 博多駅博多口店。\n⚠️ 重要提醒：\n1. 必帶：台灣駕照正本 + 日文譯本 + 護照。\n2. 取車時請仔細檢查車身刮痕並拍照留底。\n3. 設定導航到麵包超人博物館停車場。', 
-        link: 'https://www.google.com/maps/search/?api=1&query=Orix+Rent-A-Car+Hakata+Station+Hakataguchi', 
+        description: 'Nissan租車博多驛南。\n⚠️ 重要提醒：\n1. 必帶：台灣駕照正本 + 日文譯本 + 護照。\n2. 取車時請仔細檢查車身刮痕並拍照留底。\n3. 設定導航到麵包超人博物館停車場。', 
+        link: 'https://maps.app.goo.gl/zonMMtjToZNkWo1e7', 
         type: ActivityType.TRANSPORT
       },
       { 
@@ -136,7 +136,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
         time: '16:30', 
         title: '入住 Rakuten STAY', 
         description: 'Rakuten STAY HOUSE x WILL STYLE 湯布院川上。\n這是一棟獨棟別墅！隱私性極佳，有私人半露天溫泉池，可以全家一起泡湯。房間內有現代化的客廳和廚房，非常舒適。', 
-        link: 'https://www.google.com/maps/search/?api=1&query=Rakuten+STAY+HOUSE+x+WILL+STYLE+Yufuin+Kawakami', 
+        link: 'https://maps.app.goo.gl/QoiscPAgodakJUQY6?g_st=ipc', 
         type: ActivityType.HOTEL
       },
       { 
@@ -179,8 +179,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
       { 
         time: '17:30', 
         title: '入住 VJ House', 
-        description: '位於福岡市區的住宿。稍微整理行李休息一下。', 
-        link: 'https://www.google.com/maps/search/?api=1&query=VJ+House+Fukuoka', 
+        description: '位於福岡市區的住宿。稍微整理行李休息一下。\n自助 Check-in: https://selfcheckin.smartorder.ai/#/Home?checkInCode=08513455&serviceId=902639068', 
+        link: 'https://maps.app.goo.gl/fFQKj2e8fQAysaURA?g_st=ipc', 
         type: ActivityType.HOTEL
       },
       { 
@@ -255,8 +255,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
       { 
         time: '16:30', 
         title: '還車', 
-        description: '前往「オリックスレンタカー 福岡機場國際線航廈店」還車。\n⚠️ 提醒：\n1. 還車前請在附近的加油站把油加滿，並保留收據給店員檢查。\n2. 檢查車上有無遺留物品 (手機、充電線、伴手禮)。\n3. 搭乘租車公司的接駁車前往航廈。', 
-        link: 'https://www.google.com/maps/search/?api=1&query=Orix+Rent-A-Car+Fukuoka+Airport+International+Terminal',
+        description: '前往「日產租車 福岡機場國際線店」還車。\n⚠️ 提醒：\n1. 還車前請在附近的加油站把油加滿，並保留收據給店員檢查。\n2. 檢查車上有無遺留物品 (手機、充電線、伴手禮)。\n3. 搭乘租車公司的接駁車前往航廈。', 
+        link: 'https://maps.app.goo.gl/9WDPvmm5AEkokRF4A',
         type: ActivityType.TRANSPORT
       },
       { 
